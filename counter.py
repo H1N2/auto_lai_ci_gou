@@ -138,8 +138,22 @@ class Counter:
         }
         self.types.append(t)
 
+    def get_pets_of_rare_degree(self, rare_degree):
+        pets_list = []
+        page_size = 10
+        total_count = self.get_pets_count(page_size)
+        page_total = total_count // page_size if total_count % page_size == 0 else (total_count // page_size + 1)
+        for i in range(page_total):
+            pets = self.get_pets(i + 1, page_size, page_total, total_count)
+            for pet in pets:
+                if rare_degree == pet['rareDegree']:
+                    pets_list.append(pet['petId'])
+            log(pets_list)
+            time.sleep(5)
+
 
 if __name__ == '__main__':
     counter = Counter(cookie)
-    counter.count_pets_amount_by_rare_degree()
-    #counter.sort_pets_by_attributes()
+    #counter.count_pets_amount_by_rare_degree()
+    # counter.sort_pets_by_attributes()
+    counter.get_pets_of_rare_degree(3)

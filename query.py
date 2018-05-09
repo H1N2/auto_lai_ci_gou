@@ -80,7 +80,7 @@ class Query:
 
         T = np.array(x)
         y_new = np.array(y)
-        x_new = np.linspace(T.min(), T.max(), 900)  # 300 represents number of points to make between T.min and T.max
+        x_new = np.linspace(T.min(), T.max(), 10000)  # 300 represents number of points to make between T.min and T.max
         price_smooth = spline(T, y_new, x_new)
         plt.plot(x_new, price_smooth)
 
