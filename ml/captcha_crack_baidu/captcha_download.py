@@ -8,7 +8,7 @@ import os
 import traceback
 
 from ml.captcha_crack_baidu.logger import log
-from ml.captcha_crack_baidu.cfg import COOKIE as cookie
+from cfg import COOKIE as cookie
 
 
 class Download:
