@@ -16,7 +16,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.python.platform import gfile
 import ml.captcha_recognize.config as config
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 
 IMAGE_HEIGHT = config.IMAGE_HEIGHT
 IMAGE_WIDTH = config.IMAGE_WIDTH

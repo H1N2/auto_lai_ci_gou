@@ -7,7 +7,7 @@ from breed import Breed
 from sale import Sale
 from buy import Buy
 from cfg import COOKIE as cookie
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 
 
 def sale():

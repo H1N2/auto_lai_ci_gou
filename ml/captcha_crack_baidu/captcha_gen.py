@@ -6,7 +6,7 @@ import numpy as np
 from PIL import ImageFile
 from PIL import Image
 
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 from ml.captcha_crack_baidu.image_corp import CHAR_IMG_WIDTH
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True

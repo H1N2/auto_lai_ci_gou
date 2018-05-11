@@ -9,7 +9,7 @@ import sys
 
 import numpy as np
 import tensorflow as tf
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 import ml.captcha_recognize.captcha_model as captcha
 
 FLAGS = None

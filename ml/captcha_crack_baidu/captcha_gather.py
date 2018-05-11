@@ -7,7 +7,7 @@ import time
 import os
 import traceback
 
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 from cfg import COOKIE as cookie
 # from ml.captcha_crack_baidu.captcha_crack import Crack
 from ml.captcha_recognize.captcha_recognize_new import Crack

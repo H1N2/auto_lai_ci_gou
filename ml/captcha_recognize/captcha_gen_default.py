@@ -6,7 +6,7 @@ import argparse
 import random
 import os
 from captcha.image import ImageCaptcha
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 import ml.captcha_recognize.config as config
 
 IMAGE_HEIGHT = config.IMAGE_HEIGHT

@@ -10,7 +10,7 @@ from cfg import PASSWORD as password
 from cfg import BAIDU_PUBLIC_KEY as baidu_pub_key
 from encrypt import sha256
 from encrypt import rsa_encrypt
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 # from ml.captcha_crack_baidu.captcha_crack import Crack
 from ml.captcha_recognize.captcha_recognize_new import Crack
 

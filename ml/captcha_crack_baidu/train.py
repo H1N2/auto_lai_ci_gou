@@ -12,7 +12,7 @@ from PIL import ImageFile
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 
 # 当前文件所在目录
 root_path = os.path.split(os.path.realpath(__file__))[0]

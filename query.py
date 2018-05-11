@@ -12,7 +12,7 @@ from scipy.interpolate import spline
 from datetime import datetime
 
 from cfg import COOKIE as cookie
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 
 
 class Query:

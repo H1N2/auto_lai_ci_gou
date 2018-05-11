@@ -154,6 +154,6 @@ class Counter:
 
 if __name__ == '__main__':
     counter = Counter(cookie)
-    # counter.count_pets_amount_by_rare_degree()
+    counter.count_pets_amount_by_rare_degree()
     # counter.sort_pets_by_attributes()
-    counter.get_pets_of_rare_degree(3)
+    #counter.get_pets_of_rare_degree(3)

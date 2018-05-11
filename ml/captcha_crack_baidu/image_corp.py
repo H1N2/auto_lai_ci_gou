@@ -7,7 +7,7 @@ import shutil
 from PIL import Image
 from PIL import ImageFile
 
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 

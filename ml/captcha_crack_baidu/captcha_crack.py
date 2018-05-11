@@ -7,8 +7,7 @@ from io import BytesIO
 
 import tensorflow as tf
 
-from ml.captcha_crack_baidu.logger import log
-
+from logger import log
 from ml.captcha_crack_baidu.train import crack_captcha
 from ml.captcha_crack_baidu.train import convert2gray
 from ml.captcha_crack_baidu.train import crack_captcha_cnn
