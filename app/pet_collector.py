@@ -17,7 +17,9 @@ class Collector:
 
         db = self.client['lai_ci_gou']
 
-        self.pet_coll = db['pet']
+        self.pets = db['pets']
+
+        self.pet_attributes = db['attributes']
 
         self.headers_template = {
             'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh-TW;q=0.7,zh;q=0.6',
@@ -39,10 +41,10 @@ class Collector:
             "pageSize": 10,
             "lastAmount": "",
             "lastRareDegree": "",
-            "filterCondition": "{\"1\":" + str(rare_degree) + ",}",
+            "filterCondition": "{\"1\":\"" + str(rare_degree) + "\"}",
             "querySortType": "AMOUNT_ASC",
             "petIds": [],
-            "requestId": 1522208927587,
+            "requestId": 1526002504200,
             "appId": 1,
             "tpl": "",
         }
@@ -67,7 +69,7 @@ class Collector:
         return response['data']
 
     # 保存狗狗到数据库
-    def save(self, pet_info):
+    def save_pet(self, pet_info):
         pet = {
             'id': pet_info['id'],
             'petId': pet_info['petId'],
@@ -79,13 +81,30 @@ class Collector:
             'petUrl': pet_info['petUrl'],
             'attributes': pet_info['attributes'],
         }
-        self.pet_coll.insert(pet)
+        self.pets.insert(pet)
         log('保存狗狗{0}'.format(pet_info['petId']))
+
+    # 保存或者更新属性数据
+    def save_update_attributes(self, attributes):
+        for attribute in attributes:
+            exist = self.pet_attributes.find_one(attribute)
+            if exist:
+                self.pet_attributes.update_one({
+                    '_id': exist['_id']
+                }, {
+                    '$inc': {
+                        'amount': 1
+                    }
+                }, upsert=False)
+            else:
+                attribute['amount'] = 0
+                self.pet_attributes.insert(attribute)
 
     # 查询并保存狗狗及其祖宗（如果有的话）
     def query_save_pet_and_ancestors(self, pet_id):
         info = self.get_pet_info(pet_id)
-        self.save(info)
+        self.save_pet(info)
+        self.save_update_attributes(info['attributes'])
 
         if info['father']:
             log('狗狗父亲{0}'.format(info['father']['petId']))
@@ -102,7 +121,7 @@ class Collector:
             log('第{0}页{1}狗狗'.format(page_no, self.rare_degree_dic[rare_degree]))
             pets = self.get_paging_pets(page_no, rare_degree)
             for pet in pets:
-                count = self.pet_coll.find({"petId": pet['petId']}).count()
+                count = self.pets.find({"petId": pet['petId']}).count()
                 if count != 0:
                     continue
 
