@@ -6,7 +6,7 @@ import time
 import traceback
 from pymongo import MongoClient
 from cfg import COOKIE as cookie
-from ml.captcha_crack_baidu.logger import log
+from logger import log
 
 
 class Collector:
