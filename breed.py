@@ -40,7 +40,7 @@ class Breed:
             "pageSize": page_size,
             "pageTotal": -1,
             "totalCount": 0,
-            "requestId": 1522653311399,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -59,7 +59,7 @@ class Breed:
             "pageSize": page_size,
             "pageTotal": page_total,
             "totalCount": total_count,
-            "requestId": 1522653421953,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -77,7 +77,7 @@ class Breed:
         data = {
             "pageNo": 1,
             "pageSize": 10,
-            "requestId": 1524672272863,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -104,7 +104,7 @@ class Breed:
         headers = self.headers_template
         headers['Referer'] = 'https://pet-chain.baidu.com/chain/chooseMyDog?appId=1&tpl='
         data = {
-            "requestId": 1521514302355,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -127,7 +127,7 @@ class Breed:
             "amount": amount,
             "captcha": captcha,
             "seed": seed,
-            "requestId": 1524673145588,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -148,7 +148,7 @@ class Breed:
             "appId": 1,
             'confirmType': 4,
             "s": secret,
-            "requestId": 1522646347101,
+            "requestId": int(time.time() * 1000),
             "tpl": "",
         }
         r = requests.post(url, headers=headers, data=json.dumps(data))

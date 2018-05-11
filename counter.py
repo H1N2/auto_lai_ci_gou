@@ -39,7 +39,7 @@ class Counter:
             "pageSize": page_size,
             "pageTotal": -1,
             "totalCount": 0,
-            "requestId": 1522653311399,
+            "requestId": int(time.time() * 1000),
             "appId": 1, "tpl": "",
         }
         r = requests.post(url, headers=headers, data=json.dumps(data))
@@ -56,7 +56,7 @@ class Counter:
             "pageSize": page_size,
             "pageTotal": page_total,
             "totalCount": total_count,
-            "requestId": 1522653421953,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -72,7 +72,7 @@ class Counter:
         headers['Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=center&petId=' + pet_id + '&appId=1&tpl='
         data = {
             "petId": pet_id,
-            "requestId": 1521513963266,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -154,6 +154,6 @@ class Counter:
 
 if __name__ == '__main__':
     counter = Counter(cookie)
-    #counter.count_pets_amount_by_rare_degree()
+    # counter.count_pets_amount_by_rare_degree()
     # counter.sort_pets_by_attributes()
     counter.get_pets_of_rare_degree(3)

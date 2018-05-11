@@ -53,7 +53,7 @@ class Download:
         headers = self.headers_template
         headers['Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=market&petId=' + pet_id + '&validCode='
         data = {
-            "requestId": 1521514302355,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }

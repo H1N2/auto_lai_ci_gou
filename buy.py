@@ -42,7 +42,7 @@ class Buy:
             "filterCondition": "{}",
             "querySortType": "AMOUNT_ASC",
             "petIds": [],
-            "requestId": 1522208927587,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -63,7 +63,7 @@ class Buy:
             # "filterCondition": "{\"1\":" + str(rare_degree) + ",\"3\":\"0-1\",\"5\":\"0-1000\"}",
             "querySortType": "AMOUNT_ASC",
             "petIds": [],
-            "requestId": 1522208927587,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -79,7 +79,7 @@ class Buy:
             'Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=market&petId=' + pet_id + '&validCode=' + valid_code + '&appId=1&tpl='
         data = {
             "petId": pet_id,
-            "requestId": 1521513963266,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -98,7 +98,7 @@ class Buy:
         headers[
             'Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=market&petId=' + pet_id + '&validCode=' + valid_code + '&appId=1&tpl='
         data = {
-            "requestId": 1521514302355,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -121,7 +121,7 @@ class Buy:
             "seed": seed,
             "captcha": captcha,
             "validCode": valid_code,
-            "requestId": 1524839447114,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -143,7 +143,7 @@ class Buy:
             "appId": 1,
             'confirmType': 2,
             "s": secret,
-            "requestId": 1522646347101,
+            "requestId": int(time.time() * 1000),
             "tpl": "",
         }
         r = requests.post(url, headers=headers, data=json.dumps(data))

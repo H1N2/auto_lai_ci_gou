@@ -46,7 +46,7 @@ class Query:
             "filterCondition": "{\"1\":" + str(rare_degree) + ",\"3\":\"0-1\"}",
             "querySortType": "AMOUNT_ASC",
             "petIds": [],
-            "requestId": 1522208927587,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }

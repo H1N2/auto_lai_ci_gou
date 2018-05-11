@@ -37,7 +37,7 @@ class Shelf:
             "pageSize": page_size,
             "pageTotal": -1,
             "totalCount": 0,
-            "requestId": 1522653311399,
+            "requestId": int(time.time() * 1000),
             "appId": 1, "tpl": "",
         }
         r = requests.post(url, headers=headers, data=json.dumps(data))
@@ -54,7 +54,7 @@ class Shelf:
             "pageSize": page_size,
             "pageTotal": page_total,
             "totalCount": total_count,
-            "requestId": 1522653421953,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -71,7 +71,7 @@ class Shelf:
         data = {
             "petId": pet_id,
             "amount": str(price),
-            "requestId": 1522646347101,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -93,7 +93,7 @@ class Shelf:
             "appId": 1,
             'confirmType': 3,
             "s": secret,
-            "requestId": 1522646347101,
+            "requestId": int(time.time() * 1000),
             "tpl": "",
         }
         r = requests.post(url, headers=headers, data=json.dumps(data))

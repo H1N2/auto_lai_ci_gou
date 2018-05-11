@@ -76,7 +76,7 @@ class Gather:
         headers = self.headers_template
         headers['Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=market&petId=' + pet_id + '&validCode='
         data = {
-            "requestId": 1521514302355,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -105,7 +105,7 @@ class Gather:
             "seed": seed,
             "captcha": captcha,
             "validCode": "",
-            "requestId": 1522218453681,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }

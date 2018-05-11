@@ -49,7 +49,7 @@ def buy1():
     # buy.buy_angel_pets_until_max_trade_times(200)
     # 购买卓越狗 价格不高于160， 代数不高于2代，数量不超过10条
     buy.buy_pets_until_max_trade_times(160, 2, 2, 10)
-    # 购买史诗狗 价格不高于2500， 代数不高于3代，数量不超过2条
+    # 购买史诗狗 价格不高于2500， 代数不高于3代，数量不超过5条
     # buy.buy_pets_until_max_trade_times(2500, 3, 3, 5)
     log('购买定时任务执行完成')
 

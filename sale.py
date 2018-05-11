@@ -35,7 +35,7 @@ class Sale:
             "pageSize": page_size,
             "pageTotal": -1,
             "totalCount": 0,
-            "requestId": 1522653311399,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -53,7 +53,7 @@ class Sale:
             "pageSize": page_size,
             "pageTotal": page_total,
             "totalCount": total_count,
-            "requestId": 1522653421953,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -68,7 +68,7 @@ class Sale:
         headers['Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=center&petId=' + pet_id + '&appId=1&tpl='
         data = {
             "petId": pet_id,
-            "requestId": 1521513963266,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
@@ -91,7 +91,7 @@ class Sale:
         data = {
             "petId": pet_id,
             "amount": price,
-            "requestId": 1524839447114,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -113,7 +113,7 @@ class Sale:
             "appId": 1,
             'confirmType': 1,
             "s": secret,
-            "requestId": 1522646347101,
+            "requestId": int(time.time() * 1000),
             "tpl": "",
         }
         r = requests.post(url, headers=headers, data=json.dumps(data))
