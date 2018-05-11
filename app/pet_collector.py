@@ -44,7 +44,7 @@ class Collector:
             "filterCondition": "{\"1\":\"" + str(rare_degree) + "\"}",
             "querySortType": "AMOUNT_ASC",
             "petIds": [],
-            "requestId": 1526002504200,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": "",
         }
@@ -60,7 +60,7 @@ class Collector:
             'Referer'] = 'https://pet-chain.baidu.com/chain/detail?channel=market&petId=' + pet_id + '&validCode=&appId=1&tpl='
         data = {
             "petId": pet_id,
-            "requestId": 1521513963266,
+            "requestId": int(time.time() * 1000),
             "appId": 1,
             "tpl": ""
         }
